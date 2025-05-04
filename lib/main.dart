@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-// Jangan lupa impor database
 import 'home_screen.dart'; // Ganti dengan screen yang sesuai
 
 void main() async {
@@ -9,14 +8,14 @@ void main() async {
   // Inisialisasi Firebase dengan konfigurasi yang benar
   await Firebase.initializeApp(
     options: FirebaseOptions(
-      apiKey: "YOUR_API_KEY",  // Masukkan API key yang sesuai dengan project Firebase Anda
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",  // Sesuaikan dengan project ID Anda
+      apiKey: "AIzaSyA8oIByjw5ADzeCjzEWB2hEzXFTgjffh14",  // Masukkan API key yang sesuai dengan project Firebase Anda
+      authDomain: "kasirstokkp.firebaseapp.com",  // Sesuaikan dengan project ID Anda
       databaseURL: "https://kasirstokkp-default-rtdb.asia-southeast1.firebasedatabase.app/", // URL Realtime Database Anda
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID",
-      measurementId: "YOUR_MEASUREMENT_ID",
+      projectId: "kasirstokkp",
+      storageBucket: "kasirstokkp.firebasestorage.app",
+      messagingSenderId: "1024131500228",
+      appId: "1:1024131500228:web:9c3fbb1338543008a3a191",
+      measurementId: "G-DKNKRSQGG2",
     ),
   );
 
