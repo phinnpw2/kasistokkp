@@ -19,7 +19,7 @@ class _StokProdukScreenState extends State<StokProdukScreen> with SingleTickerPr
     super.initState();
     _tabController = TabController(length: 2, vsync: this);  // Inisialisasi TabController untuk 2 tab
 
-    // Menambahkan listener untuk real-time update data
+    // Menambahkan listener untuk real-time update data dari Firebase
     _databaseRef.child('produk/makanan').onValue.listen((event) {
       var snapshot = event.snapshot;
       if (snapshot.exists) {
