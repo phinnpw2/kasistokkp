@@ -3,6 +3,8 @@ import 'kasir_screen.dart';  // Pastikan diimpor
 import 'stokproduk_screen.dart'; // Pastikan juga diimpor
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);  // Menambahkan key pada konstruktor
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,12 +64,12 @@ class HomeScreen extends StatelessWidget {
             if (label == 'Kasir') {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => KasirScreen()), // Navigasi ke KasirScreen
+                MaterialPageRoute(builder: (context) => KasirScreen()), // Menghapus const
               );
             } else if (label == 'Stok Produk') {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => StokProdukScreen()), // Navigasi ke StokProdukScreen
+                MaterialPageRoute(builder: (context) => StokProdukScreen()), // Menghapus const
               );
             }
             // Tambahkan navigasi untuk tombol lainnya jika perlu

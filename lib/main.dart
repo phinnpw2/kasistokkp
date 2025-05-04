@@ -1,28 +1,20 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart'; // Import HomeScreen yang baru dibuat
-import 'package:firebase_core/firebase_core.dart';  // Menambahkan import Firebase Core
+import 'package:firebase_core/firebase_core.dart';  // Pastikan sudah mengimpor package ini
+import 'home_screen.dart';  // Ganti dengan screen yang sesuai
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  try {
-    await Firebase.initializeApp();
-    print("Firebase Initialized");  // Tambahkan log untuk memastikan Firebase berjalan
-  } catch (e) {
-    print("Error initializing Firebase: $e");
-  }
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();  // Menjaga aplikasi tetap berjalan sampai Firebase siap
+
+  await Firebase.initializeApp();  // Menjalankan inisialisasi Firebase
+  runApp(MyApp());  // Setelah Firebase diinisialisasi, baru jalankan aplikasi
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Kasir Toko Berkat Jaya',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,  // Menambahkan tema aplikasi
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: HomeScreen(),  // Menampilkan HomeScreen
+      title: 'Toko Berkat Jaya',
+      home: HomeScreen(),  // Ganti dengan screen yang sesuai
     );
   }
 }
