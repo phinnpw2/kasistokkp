@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'kasir_screen.dart';  // Pastikan diimpor
+import 'stokproduk_screen.dart'; // Pastikan juga diimpor
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -36,10 +38,10 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildButton(Icons.add_shopping_cart, 'Kasir'),
-                    _buildButton(Icons.store, 'Stok Produk'),
-                    _buildButton(Icons.bar_chart, 'Laporan'),
-                    _buildButton(Icons.settings, 'Pengaturan'),
+                    _buildButton(Icons.add_shopping_cart, 'Kasir', context), // Menghubungkan ke KasirScreen
+                    _buildButton(Icons.store, 'Stok Produk', context), // Menghubungkan ke StokProdukScreen
+                    _buildButton(Icons.bar_chart, 'Laporan', context),
+                    _buildButton(Icons.settings, 'Pengaturan', context),
                   ],
                 ),
               ],
@@ -51,12 +53,25 @@ class HomeScreen extends StatelessWidget {
   }
 
   // Fungsi untuk membuat tombol
-  Widget _buildButton(IconData icon, String label) {
+  Widget _buildButton(IconData icon, String label, BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            if (label == 'Kasir') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => KasirScreen()), // Navigasi ke KasirScreen
+              );
+            } else if (label == 'Stok Produk') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => StokProdukScreen()), // Navigasi ke StokProdukScreen
+              );
+            }
+            // Tambahkan navigasi untuk tombol lainnya jika perlu
+          },
           icon: Icon(icon, size: 30, color: Colors.blue),
         ),
         Text(label, style: TextStyle(fontSize: 16)),
